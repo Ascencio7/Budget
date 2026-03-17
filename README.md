@@ -33,6 +33,12 @@ Este proyecto está diseñado como práctica de **Desarrollo de Aplicaciones Web
 implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
 ```
+o se puede copiar lo siguiente:
+
+```bash
+implementation libs.mpandroidchart
+```
+
 2. settings.gradle (debe aparecer pluginManagement, pluggins, entre otros; si está vacío no se debe pegar el link) en dependencyResolutionManagement, debajo de maven.
    
 ```bash
@@ -41,25 +47,30 @@ maven { url 'https://jitpack.io' }
 ```
 ---
 
-## Crear el proyecto con Groovy.
+## Inicio de la app
 
 <figure>
-  <img src="./images/uno.png" alt="Captura de pantalla del login" style="max-width: 600px; display:block; margin:auto;">
+  <img src="./images/inicio.png" alt="Captura de inicio" style="max-width: 600px; display:block; margin:auto;">
 </figure>
 
-## Editar el archivo activty_main.xml al gusto para mostrar la gráfica.
+## Gráfico de Pastel
 <figure>
-  <img src="./images/dos.png" alt="Captura de pantalla del login" style="max-width: 600px; display:block; margin:auto;">
+  <img src="./images/pastel.png" alt="Captura de grafico de barras" style="max-width: 600px; display:block; margin:auto;">
 </figure>
 
-## Editar el archivo MainActivity.java para crear la lógica de la gráfica.
+## Gráfico de Barras
 <figure>
-  <img src="./images/tres.png" alt="Captura de pantalla del login" style="max-width: 600px; display:block; margin:auto;">
+  <img src="./images/barras.png" alt="Captura de grafico de barras" style="max-width: 600px; display:block; margin:auto;">
 </figure>
 
-## App corriendo correctamente.
+## Gráfico Lineal
 <figure>
-  <img src="./images/cuatro.png" alt="Captura de pantalla del login" style="max-width: 600px; display:block; margin:auto;">
+  <img src="./images/lineal.png" alt="Captura de grafico lineal" style="max-width: 600px; display:block; margin:auto;">
+</figure>
+
+## Gráfico de Radar
+<figure>
+  <img src="./images/radar.png" alt="Captura de grafico de radar" style="max-width: 600px; display:block; margin:auto;">
 </figure>
 
 <br>
@@ -70,7 +81,6 @@ maven { url 'https://jitpack.io' }
 Vladimir Ascencio – Desarrollador en aprendizaje continuo 🚀
 
 ¡Gracias por visitar este proyecto! 🧑‍💻
-
 
 ---
 
