@@ -9,6 +9,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -39,7 +40,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     EditText etCategory, etAmount;
-    Button btnAmn, btnShow;
+    Button btnAmn, btnShow, btnSalir;
 
     Spinner spinner;
     FrameLayout chartContainer;
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         etAmount = findViewById(R.id.etAmount);
         btnAmn = findViewById(R.id.btnAmn);
         btnShow = findViewById(R.id.btnShow);
+        btnSalir = findViewById(R.id.btnSalir);
         spinner = findViewById(R.id.spinner);
         chartContainer = findViewById(R.id.chartContainer);
 
@@ -64,6 +66,31 @@ public class MainActivity extends AppCompatActivity {
 
         btnAmn.setOnClickListener(v -> agregarGasto());
         btnShow.setOnClickListener(v -> mostrarGrafico());
+        
+        btnSalir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("Confirmar salida");
+                builder.setMessage("¿Desea salir?");
+
+                builder.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                });
+
+
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.show();
+            }
+        });
 
     }
 
