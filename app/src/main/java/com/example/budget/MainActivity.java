@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -91,6 +92,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 builder.show();
+            }
+        });
+
+        // Confirmacion de mensaje de que si quiere salir de la app al dar clic en el boton del celular
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                mostrarDialogoSalida(); // Se llama el metodo de salir por medio del boton del celular
             }
         });
 
@@ -224,6 +233,21 @@ public class MainActivity extends AppCompatActivity {
         chart.getDescription().setEnabled(false);
         chart.animateY(1000);
         chart.invalidate();
+    }
+
+    // Metodo de confirmar si quiere salir al dar clic en el boton de atras del celular
+    private void mostrarDialogoSalida() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Confirmar salida");
+        builder.setMessage("¿Desea salir de la aplicación?");
+
+        // Si confirma en salir la app se cierra
+        builder.setPositiveButton("Sí", (dialog, which) -> finish());
+
+        // Si confirma que no quiere salir la app NO SE CIERRA
+        builder.setNegativeButton("No", (dialog, which) -> dialog.dismiss());
+
+        builder.show();
     }
 
 }
