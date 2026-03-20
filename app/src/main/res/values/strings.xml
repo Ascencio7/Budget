@@ -4,4 +4,5 @@
     <string name="monto">Monto</string>
     <string name="agregar">Agregar</string>
     <string name="mostrar_grafico">Mostrar Grafico</string>
+    <string name="salir">Salir</string>
 </resources>
